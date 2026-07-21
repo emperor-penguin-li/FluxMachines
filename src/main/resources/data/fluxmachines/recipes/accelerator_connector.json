@@ -1,0 +1,28 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " L ",
+        "EAE",
+        "IRI"
+    ],
+    "key": {
+        "L": {
+            "item": "minecraft:lightning_rod"
+        },
+        "E": {
+            "item": "minecraft:ender_pearl"
+        },
+        "A": {
+            "item": "minecraft:anvil"
+        },
+        "I": {
+            "item": "minecraft:iron_block"
+        },
+        "R": {
+            "item": "minecraft:redstone_block"
+        }
+    },
+    "result": {
+        "item": "fluxmachines:accelerator_connector"
+    }
+}

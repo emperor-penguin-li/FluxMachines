@@ -47,6 +47,8 @@ dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 }
 
+var generatedMainResourcesDir = file('./build/generated/resources/main')
+
 tasks.named('processResources', ProcessResources).configure {
     def replaceProperties = [minecraft_version: minecraft_version, forge_version: forge_version,
                              mod_id           : mod_id, mod_name: mod_name, mod_version: mod_version]
@@ -54,6 +56,9 @@ tasks.named('processResources', ProcessResources).configure {
     filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
         expand replaceProperties
     }
+
+    sourceSets.main.resources.srcDir generatedMainResourcesDir
+    dependsOn('generateTextures')
 }
 
 tasks.named('jar', Jar).configure {
@@ -62,4 +67,12 @@ tasks.named('jar', Jar).configure {
                     'Specification-Version' : '1', 'Implementation-Title': project.name,
                     'Implementation-Version': archiveVersion, 'Implementation-Vendor': 'AA8043'])
     }
+}
+
+tasks.register('generateTextures', Exec) {
+    var scriptPath = './scripts/generate-textures.ps1'
+    commandLine System.getProperty('os.name').toLowerCase().contains('windows') ? 'powershell.exe' : 'pwsh',
+            '-File', scriptPath
+    inputs.file(scriptPath)
+    outputs.dir(new File(generatedMainResourcesDir, "assets/$mod_id/textures"))
 }

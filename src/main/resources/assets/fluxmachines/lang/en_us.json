@@ -1,0 +1,20 @@
+{
+    "block.fluxmachines.accelerator": "Accelerator",
+    "item.fluxmachines.accelerator_connector": "Accelerator Connector",
+    "item.fluxmachines.accelerator_core": "Accelerator Core",
+    "gui.fluxmachines.energy": "Energy: %s / %s FE",
+    "gui.fluxmachines.connections": "Connections: %s",
+    "gui.fluxmachines.cost": "Cost: %s FE/t",
+    "gui.fluxmachines.multiplier": "Multiplier",
+    "gui.fluxmachines.apply": "Apply",
+    "message.fluxmachines.select_accelerator_failed": "Sneak-use the connector on an accelerator first.",
+    "message.fluxmachines.accelerator_selected": "Accelerator selected.",
+    "message.fluxmachines.no_accelerator_selected": "No accelerator is selected.",
+    "message.fluxmachines.wrong_dimension": "Targets must be in the accelerator's dimension.",
+    "message.fluxmachines.selected_accelerator_missing": "The selected accelerator is no longer available.",
+    "message.fluxmachines.target_not_block_entity": "That block has no block entity.",
+    "message.fluxmachines.accelerator_target_forbidden": "Accelerators cannot be acceleration targets.",
+    "message.fluxmachines.target_bound": "Block entity bound.",
+    "message.fluxmachines.target_unbound": "Block entity unbound.",
+    "message.fluxmachines.connection_limit": "The accelerator has reached its connection limit."
+}

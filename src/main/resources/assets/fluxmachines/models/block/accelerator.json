@@ -1,0 +1,9 @@
+{
+    "parent": "minecraft:block/cube_bottom_top",
+    "textures": {
+        "bottom": "fluxmachines:block/accelerator_bottom",
+        "side": "fluxmachines:block/accelerator_side",
+        "top": "fluxmachines:block/accelerator_top",
+        "particle": "fluxmachines:block/accelerator_side"
+    }
+}
