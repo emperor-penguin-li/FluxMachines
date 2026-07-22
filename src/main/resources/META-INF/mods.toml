@@ -24,3 +24,17 @@ mandatory=true
 versionRange="[${minecraft_version},1.21)"
 ordering="NONE"
 side="BOTH"
+
+[[dependencies.${mod_id}]]
+modId="curios"
+mandatory=true
+versionRange="[${curios_version},)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.${mod_id}]]
+modId="jei"
+mandatory=false
+versionRange="[15.0,)"
+ordering="AFTER"
+side="CLIENT"

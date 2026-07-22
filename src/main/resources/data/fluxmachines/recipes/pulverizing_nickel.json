@@ -1,0 +1,1 @@
+{"type":"fluxmachines:machine_processing","machine":"pulverizer","ingredients":[{"tag":"forge:ingots/nickel"}],"result":{"item":"fluxmachines:nickel_dust"},"duration":240,"energy":64}

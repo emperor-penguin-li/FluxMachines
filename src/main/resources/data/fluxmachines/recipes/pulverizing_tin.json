@@ -1,0 +1,1 @@
+{"type":"fluxmachines:machine_processing","machine":"pulverizer","ingredients":[{"tag":"forge:ingots/tin"}],"result":{"item":"fluxmachines:tin_dust"},"duration":200,"energy":40}

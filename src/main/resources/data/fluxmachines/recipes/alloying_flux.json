@@ -1,0 +1,1 @@
+{"type":"fluxmachines:machine_processing","machine":"alloy_furnace","ingredients":[{"tag":"forge:dusts/copper"},{"tag":"forge:dusts/gold"},{"tag":"forge:ingots/reinforced_alloy"}],"result":{"item":"fluxmachines:flux_alloy","count":2},"duration":300,"energy":256}

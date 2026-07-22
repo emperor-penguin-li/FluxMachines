@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "fluxmachines:block/wire_mill_bottom",
+    "side": "fluxmachines:block/wire_mill_side",
+    "top": "fluxmachines:block/wire_mill_top",
+    "particle": "fluxmachines:block/wire_mill_side"
+  }
+}

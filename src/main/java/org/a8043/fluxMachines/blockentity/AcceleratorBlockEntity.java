@@ -37,7 +37,7 @@ public class AcceleratorBlockEntity extends BlockEntity implements MenuProvider 
     private static final String TARGETS_TAG = "Targets";
 
     private final Set<BlockPos> targets = new LinkedHashSet<>();
-    private final EnergyStorage energy = new EnergyStorage(AcceleratorConfig.ENERGY_CAPACITY.get()) {
+    private final EnergyStorage energy = new EnergyStorage(AcceleratorConfig.INSTANCE.getEnergyCapacity().get()) {
         @Override
         public int receiveEnergy(int maxReceive, boolean simulate) {
             int received = super.receiveEnergy(maxReceive, simulate);
@@ -102,7 +102,7 @@ public class AcceleratorBlockEntity extends BlockEntity implements MenuProvider 
     }
 
     public boolean addTarget(BlockPos pos) {
-        if (targets.size() >= AcceleratorConfig.MAX_CONNECTIONS.get()) {
+        if (targets.size() >= AcceleratorConfig.INSTANCE.getMaxConnections().get()) {
             return false;
         }
         boolean added = targets.add(pos.immutable());
@@ -128,7 +128,7 @@ public class AcceleratorBlockEntity extends BlockEntity implements MenuProvider 
     }
 
     public void setMultiplier(int multiplier) {
-        int bounded = Math.max(1, Math.min(multiplier, AcceleratorConfig.MAX_MULTIPLIER.get()));
+        int bounded = Math.max(1, Math.min(multiplier, AcceleratorConfig.INSTANCE.getMaxMultiplier().get()));
         if (this.multiplier != bounded) {
             this.multiplier = bounded;
             setChanged();
@@ -145,7 +145,7 @@ public class AcceleratorBlockEntity extends BlockEntity implements MenuProvider 
 
     public int getEnergyCost() {
         long power = 1L;
-        for (int exponent = 0; exponent < AcceleratorConfig.ENERGY_EXPONENT.get(); exponent++) {
+        for (int exponent = 0; exponent < AcceleratorConfig.INSTANCE.getEnergyExponent().get(); exponent++) {
             power = Math.min(Integer.MAX_VALUE, power * multiplier);
         }
         long cost = Math.min(Integer.MAX_VALUE, power * 10L * targets.size());
@@ -157,7 +157,7 @@ public class AcceleratorBlockEntity extends BlockEntity implements MenuProvider 
         super.load(tag);
         Tag serializedEnergy = tag.get(ENERGY_TAG);
         energy.deserializeNBT(serializedEnergy instanceof IntTag ? serializedEnergy : IntTag.valueOf(0));
-        multiplier = Math.max(1, Math.min(tag.getInt(MULTIPLIER_TAG), AcceleratorConfig.MAX_MULTIPLIER.get()));
+        multiplier = Math.max(1, Math.min(tag.getInt(MULTIPLIER_TAG), AcceleratorConfig.INSTANCE.getMaxMultiplier().get()));
         targets.clear();
         ListTag serializedTargets = tag.getList(TARGETS_TAG, Tag.TAG_COMPOUND);
         for (Tag serializedTarget : serializedTargets) {

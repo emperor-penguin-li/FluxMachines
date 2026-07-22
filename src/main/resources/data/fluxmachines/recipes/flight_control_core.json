@@ -1,0 +1,1 @@
+{"type":"minecraft:crafting_shaped","pattern":["PAP","SLS","PAP"],"key":{"P":{"item":"minecraft:phantom_membrane"},"A":{"item":"minecraft:netherite_ingot"},"S":{"item":"fluxmachines:inertial_stabilizer"},"L":{"item":"fluxmachines:energy_lattice"}},"result":{"item":"fluxmachines:flight_control_core"}}

@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "fluxmachines:block/alloy_furnace_bottom",
+    "side": "fluxmachines:block/alloy_furnace_side",
+    "top": "fluxmachines:block/alloy_furnace_top",
+    "particle": "fluxmachines:block/alloy_furnace_side"
+  }
+}

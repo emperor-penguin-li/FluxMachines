@@ -8,9 +8,12 @@ import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
+import org.a8043.fluxMachines.Main;
 
 public class AcceleratorScreen extends AbstractContainerScreen<AcceleratorMenu> {
+    private static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "textures/gui/accelerator.png");
     private EditBox multiplier;
 
     public AcceleratorScreen(AcceleratorMenu menu, Inventory inventory, Component title) {
@@ -56,8 +59,7 @@ public class AcceleratorScreen extends AbstractContainerScreen<AcceleratorMenu> 
 
     @Override
     protected void renderBg(GuiGraphics graphics, float partialTick, int mouseX, int mouseY) {
-        graphics.fill(leftPos, topPos, leftPos + imageWidth, topPos + imageHeight, 0xFFE2E2E2);
-        graphics.renderOutline(leftPos, topPos, imageWidth, imageHeight, 0xFF555555);
+        graphics.blit(TEXTURE, leftPos, topPos, 0, 0, imageWidth, imageHeight, imageWidth, imageHeight);
     }
 
     @Override

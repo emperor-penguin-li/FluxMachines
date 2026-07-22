@@ -1,0 +1,1 @@
+{"type":"fluxmachines:machine_processing","machine":"alloy_furnace","ingredients":[{"tag":"forge:ingots/flux_alloy"},{"tag":"forge:ingots/redstone_alloy"},{"tag":"forge:gems/diamond"}],"result":{"item":"fluxmachines:energy_lattice"},"duration":500,"energy":512}

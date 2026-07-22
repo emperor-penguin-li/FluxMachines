@@ -11,6 +11,7 @@ public final class NetworkHandler {
 
     public static void register() {
         CHANNEL.registerMessage(0, SetMultiplierPacket.class, SetMultiplierPacket::encode, SetMultiplierPacket::decode, SetMultiplierPacket::handle);
+        CHANNEL.registerMessage(1, SprintKeyPacket.class, SprintKeyPacket::encode, SprintKeyPacket::decode, SprintKeyPacket::handle);
     }
 
     private NetworkHandler() {

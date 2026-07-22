@@ -1,0 +1,1 @@
+{"type":"minecraft:crafting_shaped","pattern":["GPG","FLF","GPG"],"key":{"G":{"tag":"forge:wires/gold"},"P":{"item":"minecraft:phantom_membrane"},"F":{"tag":"forge:ingots/flux_alloy"},"L":{"item":"fluxmachines:energy_lattice"}},"result":{"item":"fluxmachines:lift_emitter"}}

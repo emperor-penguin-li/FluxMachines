@@ -21,6 +21,8 @@ minecraft {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "$projectDir/build/createSrgToMcp/output.srg"
             mods {
                 "${mod_id}" {
                     source sourceSets.main
@@ -41,17 +43,30 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
     mavenCentral()
+    maven { url = "https://maven.theillusivec4.top/" }
+    maven { url = "https://maven.blamejared.com/" }
+    maven { url 'https://modmaven.dev/' }
 }
 
 dependencies {
-    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+    minecraft "net.minecraftforge:forge:$minecraft_version-$forge_version"
+
+    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:$curios_version:api")
+    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:$curios_version")
+
+    compileOnly fg.deobf("mezz.jei:jei-1.20.1-common-api:$jei_version")
+    compileOnly fg.deobf("mezz.jei:jei-1.20.1-forge-api:$jei_version")
+    runtimeOnly fg.deobf("mezz.jei:jei-1.20.1-forge:$jei_version")
+
+    runtimeOnly fg.deobf("mekanism:Mekanism:${mekanism_version}")
 }
 
 var generatedMainResourcesDir = file('./build/generated/resources/main')
 
 tasks.named('processResources', ProcessResources).configure {
     def replaceProperties = [minecraft_version: minecraft_version, forge_version: forge_version,
-                             mod_id           : mod_id, mod_name: mod_name, mod_version: mod_version]
+                             mod_id           : mod_id, mod_name: mod_name, mod_version: mod_version,
+                             curios_version   : curios_version]
     inputs.properties replaceProperties
     filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
         expand replaceProperties
@@ -69,10 +84,18 @@ tasks.named('jar', Jar).configure {
     }
 }
 
-tasks.register('generateTextures', Exec) {
-    var scriptPath = './scripts/generate-textures.ps1'
-    commandLine System.getProperty('os.name').toLowerCase().contains('windows') ? 'powershell.exe' : 'pwsh',
-            '-File', scriptPath
-    inputs.file(scriptPath)
-    outputs.dir(new File(generatedMainResourcesDir, "assets/$mod_id/textures"))
+tasks.register('generateTextures') {
+    def scripts = fileTree('./scripts/generate-textures') { include '*.ps1' }
+    def textureOutput = new File(generatedMainResourcesDir, "assets/$mod_id/textures")
+    inputs.files(scripts)
+    outputs.dir(textureOutput)
+
+    doLast {
+        scripts.files.sort().each { script ->
+            exec {
+                commandLine 'pwsh', '-NoProfile', '-File', script.absolutePath,
+                    '-OutputRoot', textureOutput.absolutePath
+            }
+        }
+    }
 }

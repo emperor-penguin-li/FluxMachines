@@ -2,6 +2,7 @@ package org.a8043.fluxMachines.registry;
 
 import org.a8043.fluxMachines.Main;
 import org.a8043.fluxMachines.blockentity.AcceleratorBlockEntity;
+import org.a8043.fluxMachines.blockentity.ProcessingMachineBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -11,6 +12,8 @@ public final class ModBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> REGISTER = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, Main.MOD_ID);
     public static final RegistryObject<BlockEntityType<AcceleratorBlockEntity>> ACCELERATOR = REGISTER.register("accelerator",
         () -> BlockEntityType.Builder.of(AcceleratorBlockEntity::new, ModBlocks.ACCELERATOR.get()).build(null));
+    public static final RegistryObject<BlockEntityType<ProcessingMachineBlockEntity>> PROCESSING_MACHINE = REGISTER.register("processing_machine",
+        () -> BlockEntityType.Builder.of(ProcessingMachineBlockEntity::new, ModBlocks.PULVERIZER.get(), ModBlocks.WIRE_MILL.get(), ModBlocks.ALLOY_FURNACE.get()).build(null));
 
     private ModBlockEntities() {
     }

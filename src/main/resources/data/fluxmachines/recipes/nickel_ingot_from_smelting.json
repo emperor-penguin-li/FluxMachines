@@ -1,0 +1,1 @@
+{"type":"minecraft:smelting","category":"misc","cookingtime":200,"experience":1.0,"ingredient":[{"tag":"forge:ores/nickel"},{"tag":"forge:raw_materials/nickel"},{"tag":"forge:dusts/nickel"}],"result":"fluxmachines:nickel_ingot"}

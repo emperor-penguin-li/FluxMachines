@@ -13,6 +13,7 @@ public final class ClientModEvents {
     @SubscribeEvent
     public static void registerScreens(FMLClientSetupEvent event) {
         event.enqueueWork(() -> MenuScreens.register(ModMenus.ACCELERATOR.get(), AcceleratorScreen::new));
+        event.enqueueWork(() -> MenuScreens.register(ModMenus.PROCESSING_MACHINE.get(), ProcessingMachineScreen::new));
     }
 
     private ClientModEvents() {

@@ -1,0 +1,1 @@
+{"type":"minecraft:crafting_shaped","pattern":["NPN","RCR","TIT"],"key":{"N":{"tag":"forge:ingots/nickel"},"P":{"item":"minecraft:piston"},"R":{"item":"minecraft:redstone_block"},"C":{"item":"fluxmachines:machine_casing"},"T":{"tag":"forge:ingots/tin"},"I":{"item":"minecraft:iron_block"}},"result":{"item":"fluxmachines:pulverizer"}}

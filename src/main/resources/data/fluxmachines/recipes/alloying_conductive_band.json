@@ -1,0 +1,1 @@
+{"type":"fluxmachines:machine_processing","machine":"alloy_furnace","ingredients":[{"tag":"forge:ingots/reinforced_alloy"},{"tag":"forge:ingots/flux_alloy"},{"tag":"forge:dusts/gold"}],"result":{"item":"fluxmachines:conductive_band"},"duration":400,"energy":384}
