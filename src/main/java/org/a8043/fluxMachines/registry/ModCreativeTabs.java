@@ -18,6 +18,10 @@ public final class ModCreativeTabs {
             event.accept(ModItems.PULVERIZER);
             event.accept(ModItems.WIRE_MILL);
             event.accept(ModItems.ALLOY_FURNACE);
+            event.accept(ModItems.MOB_SUPPRESSOR);
+            event.accept(ModItems.SUPPRESSOR_CASING);
+            event.accept(ModItems.SUPPRESSOR_COIL);
+            event.accept(ModItems.SUPPRESSOR_EMITTER);
             event.accept(ModItems.TIN_ORE);
             event.accept(ModItems.DEEPSLATE_TIN_ORE);
             event.accept(ModItems.NICKEL_ORE);

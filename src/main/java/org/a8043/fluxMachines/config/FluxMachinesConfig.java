@@ -1,8 +1,8 @@
 package org.a8043.fluxMachines.config;
 
-import net.minecraftforge.common.ForgeConfigSpec;
 import lombok.Getter;
 import lombok.Setter;
+import net.minecraftforge.common.ForgeConfigSpec;
 
 /** Shared configuration specification for all FluxMachines settings. */
 @Getter
@@ -22,6 +22,9 @@ public final class FluxMachinesConfig {
     private ForgeConfigSpec.IntValue boostCost;
     private ForgeConfigSpec.IntValue fallCost;
     private ForgeConfigSpec.DoubleValue boostSpeed;
+
+    private ForgeConfigSpec.IntValue mobSuppressorRange;
+    private ForgeConfigSpec.IntValue mobSuppressorEnergyPerTick;
 
     private FluxMachinesConfig() {
         ForgeConfigSpec.Builder builder = new ForgeConfigSpec.Builder();
@@ -43,6 +46,13 @@ public final class FluxMachinesConfig {
         boostCost = builder.defineInRange("boostAdditionalCostPerTick", 8192, 0, Integer.MAX_VALUE);
         fallCost = builder.defineInRange("fallCostPerBlock", 10, 0, Integer.MAX_VALUE);
         boostSpeed = builder.defineInRange("boostSpeedMultiplier", 1.5D, 1.0D, 10.0D);
+        builder.pop();
+
+        builder.push("mobSuppressor");
+        mobSuppressorRange = builder.comment("Suppression radius in blocks.")
+            .defineInRange("range", 64, 1, 256);
+        mobSuppressorEnergyPerTick = builder.comment("FE consumed per tick while the suppressor is active.")
+            .defineInRange("energyPerTick", 64, 1, 1_000_000);
         builder.pop();
 
         spec = builder.build();

@@ -1,0 +1,9 @@
+{
+    "parent": "minecraft:block/orientable",
+    "textures": {
+        "top": "fluxmachines:block/mob_suppressor_top",
+        "front": "fluxmachines:block/mob_suppressor_front_active",
+        "side": "fluxmachines:block/mob_suppressor_side",
+        "particle": "fluxmachines:block/mob_suppressor_side"
+    }
+}

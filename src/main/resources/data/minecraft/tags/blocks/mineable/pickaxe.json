@@ -1,1 +1,13 @@
-{"replace":false,"values":["fluxmachines:tin_ore","fluxmachines:deepslate_tin_ore","fluxmachines:nickel_ore","fluxmachines:deepslate_nickel_ore"]}
+{
+    "replace": false,
+    "values": [
+        "fluxmachines:tin_ore",
+        "fluxmachines:deepslate_tin_ore",
+        "fluxmachines:nickel_ore",
+        "fluxmachines:deepslate_nickel_ore",
+        "fluxmachines:mob_suppressor",
+        "fluxmachines:suppressor_casing",
+        "fluxmachines:suppressor_coil",
+        "fluxmachines:suppressor_emitter"
+    ]
+}

@@ -1,14 +1,14 @@
 package org.a8043.fluxMachines.registry;
 
-import org.a8043.fluxMachines.Main;
-import org.a8043.fluxMachines.item.AcceleratorConnectorItem;
-import org.a8043.fluxMachines.item.ElectricFlightRingItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.a8043.fluxMachines.Main;
+import org.a8043.fluxMachines.item.AcceleratorConnectorItem;
+import org.a8043.fluxMachines.item.ElectricFlightRingItem;
 
 public final class ModItems {
     public static final DeferredRegister<Item> REGISTER = DeferredRegister.create(ForgeRegistries.ITEMS, Main.MOD_ID);
@@ -17,6 +17,10 @@ public final class ModItems {
     public static final RegistryObject<Item> PULVERIZER = REGISTER.register("pulverizer", () -> new BlockItem(ModBlocks.PULVERIZER.get(), new Item.Properties()));
     public static final RegistryObject<Item> WIRE_MILL = REGISTER.register("wire_mill", () -> new BlockItem(ModBlocks.WIRE_MILL.get(), new Item.Properties()));
     public static final RegistryObject<Item> ALLOY_FURNACE = REGISTER.register("alloy_furnace", () -> new BlockItem(ModBlocks.ALLOY_FURNACE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> MOB_SUPPRESSOR = blockItem("mob_suppressor", ModBlocks.MOB_SUPPRESSOR);
+    public static final RegistryObject<Item> SUPPRESSOR_CASING = blockItem("suppressor_casing", ModBlocks.SUPPRESSOR_CASING);
+    public static final RegistryObject<Item> SUPPRESSOR_COIL = blockItem("suppressor_coil", ModBlocks.SUPPRESSOR_COIL);
+    public static final RegistryObject<Item> SUPPRESSOR_EMITTER = blockItem("suppressor_emitter", ModBlocks.SUPPRESSOR_EMITTER);
     public static final RegistryObject<Item> TIN_ORE = blockItem("tin_ore", ModBlocks.TIN_ORE);
     public static final RegistryObject<Item> DEEPSLATE_TIN_ORE = blockItem("deepslate_tin_ore", ModBlocks.DEEPSLATE_TIN_ORE);
     public static final RegistryObject<Item> NICKEL_ORE = blockItem("nickel_ore", ModBlocks.NICKEL_ORE);

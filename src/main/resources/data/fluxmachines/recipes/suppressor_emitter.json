@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " Q ",
+        "QFQ",
+        " Q "
+    ],
+    "key": {
+        "Q": {
+            "item": "minecraft:quartz_block"
+        },
+        "F": {
+            "tag": "forge:ingots/flux_alloy"
+        }
+    },
+    "result": {
+        "item": "fluxmachines:suppressor_emitter",
+        "count": 5
+    }
+}

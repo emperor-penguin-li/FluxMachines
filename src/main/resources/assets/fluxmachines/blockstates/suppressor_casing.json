@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "": {
+            "model": "fluxmachines:block/suppressor_casing"
+        }
+    }
+}

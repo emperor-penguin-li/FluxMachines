@@ -136,4 +136,58 @@ Save-Texture (New-OreTexture $color.Graphite $color.Steel $color.TinDark $color.
 Save-Texture (New-OreTexture $color.Steel $color.Light $color.NickelDark $color.Nickel $color.Amber) (Join-Path $blockDir "nickel_ore.png")
 Save-Texture (New-OreTexture $color.Graphite $color.Steel $color.NickelDark $color.Nickel $color.Amber) (Join-Path $blockDir "deepslate_nickel_ore.png")
 
+# Mob suppressor: modular graphite tower with cyan field channels.
+$side = New-Texture $color.Ink
+Add-CasingFrame $side $color.Graphite $color.Light $color.Shadow
+Set-Rectangle $side 3 3 10 10 $color.Panel
+Set-Rectangle $side 6 3 4 10 $color.CyanDark
+Set-Rectangle $side 7 4 2 8 $color.Cyan
+Set-Points $side $color.Copper @(@(3,3),@(12,3),@(3,12),@(12,12))
+Save-Texture $side (Join-Path $blockDir "mob_suppressor_side.png")
+
+$top = New-Texture $color.Ink
+Add-CasingFrame $top $color.Graphite $color.Light $color.Shadow
+Set-Rectangle $top 3 3 10 10 $color.Panel
+Set-Rectangle $top 5 5 6 6 $color.CyanDark
+Set-Rectangle $top 7 3 2 10 $color.Cyan
+Set-Rectangle $top 3 7 10 2 $color.Cyan
+Save-Texture $top (Join-Path $blockDir "mob_suppressor_top.png")
+
+$front = New-Texture $color.Ink
+Add-CasingFrame $front $color.Graphite $color.Light $color.Shadow
+Set-Rectangle $front 3 3 10 10 $color.Panel
+Set-Rectangle $front 5 5 6 6 $color.CyanDark
+Set-Rectangle $front 7 7 2 2 $color.Steel
+$frontActive = $front.Clone()
+Save-Texture $front (Join-Path $blockDir "mob_suppressor_front.png")
+Set-Rectangle $frontActive 5 5 6 6 $color.Cyan
+Set-Rectangle $frontActive 6 6 4 4 $color.CyanLight
+Set-Rectangle $frontActive 7 7 2 2 $color.Glow
+Save-Texture $frontActive (Join-Path $blockDir "mob_suppressor_front_active.png")
+
+$casing = New-Texture $color.Ink
+Add-CasingFrame $casing $color.Steel $color.Light $color.Shadow
+Set-Rectangle $casing 3 3 10 10 $color.Graphite
+Set-Points $casing $color.Copper @(@(4,4),@(11,4),@(4,11),@(11,11))
+Set-Rectangle $casing 7 3 2 10 $color.CyanDark
+Save-Texture $casing (Join-Path $blockDir "suppressor_casing.png")
+
+$coil = New-Texture $color.Panel
+Add-CasingFrame $coil $color.CopperDark $color.Copper $color.Shadow
+Set-Rectangle $coil 3 3 10 10 $color.CyanDark
+Set-Rectangle $coil 4 4 8 8 $color.Ink
+Set-Rectangle $coil 5 5 6 6 $color.Cyan
+Set-Rectangle $coil 7 3 2 10 $color.CyanLight
+Set-Points $coil $color.Glow @(@(6,6),@(9,6),@(6,9),@(9,9))
+Save-Texture $coil (Join-Path $blockDir "suppressor_coil.png")
+
+$emitter = New-Texture $color.Ink
+Add-CasingFrame $emitter $color.Graphite $color.Light $color.Shadow
+Set-Rectangle $emitter 3 3 10 10 $color.CyanDark
+Set-Rectangle $emitter 5 5 6 6 $color.Cyan
+Set-Rectangle $emitter 7 2 2 12 $color.CyanLight
+Set-Rectangle $emitter 2 7 12 2 $color.CyanLight
+Set-Rectangle $emitter 7 7 2 2 $color.Glow
+Save-Texture $emitter (Join-Path $blockDir "suppressor_emitter.png")
+
 Write-Host "Generated machine textures in $blockDir"

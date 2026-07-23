@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "RIR",
+        "IMI",
+        "RIR"
+    ],
+    "key": {
+        "R": {
+            "tag": "forge:ingots/reinforced_alloy"
+        },
+        "I": {
+            "tag": "forge:ingots/iron"
+        },
+        "M": {
+            "item": "fluxmachines:machine_casing"
+        }
+    },
+    "result": {
+        "item": "fluxmachines:suppressor_casing",
+        "count": 4
+    }
+}

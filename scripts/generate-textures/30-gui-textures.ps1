@@ -73,4 +73,19 @@ Set-Rectangle $accelerator 8 145 140 2 $color.CyanDark
 Set-Rectangle $accelerator 8 149 90 2 $color.CopperDark
 Save-Texture $accelerator (Join-Path $guiDir "accelerator.png")
 
+$suppressor = New-Bitmap 176 166 $color.GuiBack
+Add-GuiFrame $suppressor $color.Cyan
+Set-Rectangle $suppressor 7 30 162 52 $color.GuiMid
+Set-Rectangle $suppressor 8 31 160 50 $color.GuiLight
+Set-Rectangle $suppressor 9 32 158 48 $color.GuiBack
+Set-Rectangle $suppressor 7 89 162 44 $color.GuiMid
+Set-Rectangle $suppressor 8 90 160 42 $color.GuiLight
+Set-Rectangle $suppressor 9 91 158 40 $color.GuiBack
+Set-Rectangle $suppressor 137 38 20 32 $color.Graphite
+Set-Rectangle $suppressor 140 34 14 38 $color.CyanDark
+Set-Rectangle $suppressor 143 31 8 43 $color.Cyan
+Set-Rectangle $suppressor 136 31 22 3 $color.CyanLight
+Set-Rectangle $suppressor 145 29 4 47 $color.Glow
+Save-Texture $suppressor (Join-Path $guiDir "mob_suppressor.png")
+
 Write-Host "Generated GUI textures in $guiDir"

@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "CNC",
+        "RFR",
+        "CNC"
+    ],
+    "key": {
+        "C": {
+            "tag": "forge:wires/copper"
+        },
+        "N": {
+            "tag": "forge:ingots/nickel"
+        },
+        "R": {
+            "tag": "forge:dusts/redstone"
+        },
+        "F": {
+            "tag": "forge:ingots/flux_alloy"
+        }
+    },
+    "result": {
+        "item": "fluxmachines:suppressor_coil",
+        "count": 3
+    }
+}

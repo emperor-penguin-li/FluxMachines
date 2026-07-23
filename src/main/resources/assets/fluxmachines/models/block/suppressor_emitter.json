@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+        "all": "fluxmachines:block/suppressor_emitter"
+    }
+}

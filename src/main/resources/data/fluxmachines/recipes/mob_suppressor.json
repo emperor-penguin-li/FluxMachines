@@ -1,0 +1,28 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "RAR",
+        "CMC",
+        "RER"
+    ],
+    "key": {
+        "R": {
+            "tag": "forge:ingots/reinforced_alloy"
+        },
+        "A": {
+            "item": "minecraft:comparator"
+        },
+        "C": {
+            "tag": "forge:ingots/redstone_alloy"
+        },
+        "M": {
+            "item": "fluxmachines:machine_casing"
+        },
+        "E": {
+            "item": "fluxmachines:energy_lattice"
+        }
+    },
+    "result": {
+        "item": "fluxmachines:mob_suppressor"
+    }
+}
