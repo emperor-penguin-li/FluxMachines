@@ -33,6 +33,10 @@ public final class FluxMachinesConfig {
     private ForgeConfigSpec.IntValue mobSuppressorRange;
     private ForgeConfigSpec.IntValue mobSuppressorEnergyPerTick;
 
+    private ForgeConfigSpec.IntValue chargingStationEnergyPerTick;
+    private ForgeConfigSpec.IntValue chargingStationEnergyCapacity;
+    private ForgeConfigSpec.IntValue chargingStationMaxReceive;
+
     private FluxMachinesConfig() {
         ForgeConfigSpec.Builder builder = new ForgeConfigSpec.Builder();
 
@@ -67,6 +71,15 @@ public final class FluxMachinesConfig {
             .defineInRange("range", 64, 1, 256);
         mobSuppressorEnergyPerTick = builder.comment("FE consumed per tick while the suppressor is active.")
             .defineInRange("energyPerTick", 64, 1, 1_000_000);
+        builder.pop();
+
+        builder.push("chargingStation");
+        chargingStationEnergyPerTick = builder.comment("Total FE per tick transferred to players standing on the charging station.")
+            .defineInRange("energyPerTick", 8192, 0, Integer.MAX_VALUE);
+        chargingStationEnergyCapacity = builder.comment("Internal FE buffer capacity.")
+            .defineInRange("energyCapacity", 1_000_000, 1, Integer.MAX_VALUE);
+        chargingStationMaxReceive = builder.comment("Maximum FE accepted per tick from external energy providers.")
+            .defineInRange("maxReceive", 32768, 1, Integer.MAX_VALUE);
         builder.pop();
 
         spec = builder.build();

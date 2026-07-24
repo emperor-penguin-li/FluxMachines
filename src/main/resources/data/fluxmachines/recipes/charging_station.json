@@ -1,0 +1,31 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "CIC",
+        "LML",
+        "RAR"
+    ],
+    "key": {
+        "C": {
+            "item": "fluxmachines:conductive_band"
+        },
+        "I": {
+            "item": "fluxmachines:induction_coil"
+        },
+        "L": {
+            "item": "fluxmachines:energy_lattice"
+        },
+        "M": {
+            "item": "fluxmachines:machine_casing"
+        },
+        "R": {
+            "tag": "forge:ingots/reinforced_alloy"
+        },
+        "A": {
+            "tag": "forge:ingots/redstone_alloy"
+        }
+    },
+    "result": {
+        "item": "fluxmachines:charging_station"
+    }
+}

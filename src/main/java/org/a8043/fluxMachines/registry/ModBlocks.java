@@ -8,10 +8,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.a8043.fluxMachines.Main;
-import org.a8043.fluxMachines.block.AcceleratorBlock;
-import org.a8043.fluxMachines.block.AdvancedProcessingMachineBlock;
-import org.a8043.fluxMachines.block.MobSuppressorBlock;
-import org.a8043.fluxMachines.block.ProcessingMachineBlock;
+import org.a8043.fluxMachines.block.*;
 
 public final class ModBlocks {
     public static final DeferredRegister<Block> REGISTER = DeferredRegister.create(ForgeRegistries.BLOCKS, Main.MOD_ID);
@@ -21,6 +18,9 @@ public final class ModBlocks {
     public static final RegistryObject<Block> PULVERIZER = REGISTER.register("pulverizer", () -> new ProcessingMachineBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(4.0F).sound(SoundType.METAL)));
     public static final RegistryObject<Block> WIRE_MILL = REGISTER.register("wire_mill", () -> new ProcessingMachineBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(4.0F).sound(SoundType.METAL)));
     public static final RegistryObject<Block> ALLOY_FURNACE = REGISTER.register("alloy_furnace", () -> new ProcessingMachineBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(4.0F).sound(SoundType.METAL)));
+    public static final RegistryObject<Block> CHARGING_STATION = REGISTER.register("charging_station",
+        () -> new ChargingStationBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(4.0F, 6.0F).sound(SoundType.METAL)
+            .requiresCorrectToolForDrops().lightLevel(state -> state.getValue(ChargingStationBlock.LIT) ? 10 : 0)));
     public static final RegistryObject<Block> RESONANT_CRUSHER = advancedMachine("resonant_crusher");
     public static final RegistryObject<Block> LEACHING_REACTOR = advancedMachine("leaching_reactor");
     public static final RegistryObject<Block> ELECTROLYTIC_PURIFIER = advancedMachine("electrolytic_purifier");

@@ -5,10 +5,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.a8043.fluxMachines.Main;
-import org.a8043.fluxMachines.blockentity.AcceleratorBlockEntity;
-import org.a8043.fluxMachines.blockentity.AdvancedProcessingMachineBlockEntity;
-import org.a8043.fluxMachines.blockentity.MobSuppressorBlockEntity;
-import org.a8043.fluxMachines.blockentity.ProcessingMachineBlockEntity;
+import org.a8043.fluxMachines.blockentity.*;
 
 public final class ModBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> REGISTER = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, Main.MOD_ID);
@@ -16,6 +13,8 @@ public final class ModBlockEntities {
         () -> BlockEntityType.Builder.of(AcceleratorBlockEntity::new, ModBlocks.ACCELERATOR.get()).build(null));
     public static final RegistryObject<BlockEntityType<ProcessingMachineBlockEntity>> PROCESSING_MACHINE = REGISTER.register("processing_machine",
         () -> BlockEntityType.Builder.of(ProcessingMachineBlockEntity::new, ModBlocks.PULVERIZER.get(), ModBlocks.WIRE_MILL.get(), ModBlocks.ALLOY_FURNACE.get()).build(null));
+    public static final RegistryObject<BlockEntityType<ChargingStationBlockEntity>> CHARGING_STATION = REGISTER.register("charging_station",
+        () -> BlockEntityType.Builder.of(ChargingStationBlockEntity::new, ModBlocks.CHARGING_STATION.get()).build(null));
     public static final RegistryObject<BlockEntityType<MobSuppressorBlockEntity>> MOB_SUPPRESSOR = REGISTER.register("mob_suppressor",
         () -> BlockEntityType.Builder.of(MobSuppressorBlockEntity::new, ModBlocks.MOB_SUPPRESSOR.get()).build(null));
     public static final RegistryObject<BlockEntityType<AdvancedProcessingMachineBlockEntity>> ADVANCED_PROCESSING_MACHINE =

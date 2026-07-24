@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "lit=false": {
+            "model": "fluxmachines:block/charging_station"
+        },
+        "lit=true": {
+            "model": "fluxmachines:block/charging_station_active"
+        }
+    }
+}

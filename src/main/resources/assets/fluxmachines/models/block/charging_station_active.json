@@ -1,0 +1,9 @@
+{
+    "parent": "minecraft:block/cube_bottom_top",
+    "textures": {
+        "bottom": "fluxmachines:block/charging_station_bottom",
+        "top": "fluxmachines:block/charging_station_top_active",
+        "side": "fluxmachines:block/charging_station_side",
+        "particle": "fluxmachines:block/charging_station_side"
+    }
+}

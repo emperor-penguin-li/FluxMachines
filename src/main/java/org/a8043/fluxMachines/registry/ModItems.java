@@ -19,6 +19,7 @@ public final class ModItems {
     public static final RegistryObject<Item> PULVERIZER = REGISTER.register("pulverizer", () -> new BlockItem(ModBlocks.PULVERIZER.get(), new Item.Properties()));
     public static final RegistryObject<Item> WIRE_MILL = REGISTER.register("wire_mill", () -> new BlockItem(ModBlocks.WIRE_MILL.get(), new Item.Properties()));
     public static final RegistryObject<Item> ALLOY_FURNACE = REGISTER.register("alloy_furnace", () -> new BlockItem(ModBlocks.ALLOY_FURNACE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CHARGING_STATION = blockItem("charging_station", ModBlocks.CHARGING_STATION);
     public static final RegistryObject<Item> RESONANT_CRUSHER = blockItem("resonant_crusher", ModBlocks.RESONANT_CRUSHER);
     public static final RegistryObject<Item> LEACHING_REACTOR = blockItem("leaching_reactor", ModBlocks.LEACHING_REACTOR);
     public static final RegistryObject<Item> ELECTROLYTIC_PURIFIER = blockItem("electrolytic_purifier", ModBlocks.ELECTROLYTIC_PURIFIER);

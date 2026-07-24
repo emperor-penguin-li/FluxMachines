@@ -119,6 +119,41 @@ Set-Rectangle $bottom 5 5 6 6 $color.Ink
 Set-Points $bottom $color.RedDark @(@(4,4),@(11,4),@(4,11),@(11,11),@(7,7),@(8,8))
 Save-Texture $bottom (Join-Path $blockDir "alloy_furnace_bottom.png")
 
+# Charging station: mid-tier conductive pad with a blue flux glyph.
+$side = New-Texture $color.Ink
+Add-CasingFrame $side $color.Graphite $color.Light $color.Shadow
+Set-Rectangle $side 3 4 10 8 $color.Panel
+Set-Rectangle $side 4 5 8 1 $color.Steel
+Set-Rectangle $side 4 10 8 1 $color.Steel
+Set-Rectangle $side 6 6 4 4 $color.CyanDark
+Set-Rectangle $side 7 7 2 2 $color.Cyan
+Set-Points $side $color.Copper @(@(3, 3), @(12, 3), @(3, 12), @(12, 12))
+Save-Texture $side (Join-Path $blockDir "charging_station_side.png")
+
+$top = New-Texture $color.Ink
+Add-CasingFrame $top $color.Graphite $color.Light $color.Shadow
+Set-Rectangle $top 3 3 10 10 $color.Panel
+Set-Rectangle $top 4 4 8 8 $color.Graphite
+Set-Rectangle $top 5 5 6 6 $color.CyanDark
+Set-Rectangle $top 7 4 2 8 $color.Steel
+Set-Rectangle $top 4 7 8 2 $color.Steel
+Set-Points $top $color.Cyan @(@(5, 5), @(10, 5), @(5, 10), @(10, 10))
+$topActive = $top.Clone()
+Save-Texture $top (Join-Path $blockDir "charging_station_top.png")
+
+Set-Rectangle $topActive 5 5 6 6 $color.Cyan
+Set-Rectangle $topActive 7 4 2 8 $color.CyanLight
+Set-Rectangle $topActive 4 7 8 2 $color.CyanLight
+Set-Rectangle $topActive 7 7 2 2 $color.Glow
+Save-Texture $topActive (Join-Path $blockDir "charging_station_top_active.png")
+
+$bottom = New-Texture $color.Ink
+Add-CasingFrame $bottom $color.Graphite $color.Steel $color.Shadow
+Set-Rectangle $bottom 4 4 8 8 $color.Panel
+Set-Rectangle $bottom 6 6 4 4 $color.Ink
+Set-Points $bottom $color.Copper @(@(3, 3), @(12, 3), @(3, 12), @(12, 12))
+Save-Texture $bottom (Join-Path $blockDir "charging_station_bottom.png")
+
 function New-OreTexture([System.Drawing.Color]$Stone, [System.Drawing.Color]$StoneLight, [System.Drawing.Color]$OreDark, [System.Drawing.Color]$Ore, [System.Drawing.Color]$OreLight) {
     $image = New-Texture $Stone
     Set-Rectangle $image 0 0 16 2 $StoneLight
