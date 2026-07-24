@@ -1,1 +1,26 @@
-{"type":"minecraft:crafting_shaped","pattern":["CTC","GLG","CTC"],"key":{"C":{"tag":"forge:wires/copper"},"T":{"tag":"forge:wires/tin"},"G":{"tag":"forge:wires/gold"},"L":{"item":"minecraft:leather"}},"result":{"item":"fluxmachines:insulated_winding","count":2}}
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "CTC",
+        "GLG",
+        "CTC"
+    ],
+    "key": {
+        "C": {
+            "tag": "forge:wires/copper"
+        },
+        "T": {
+            "tag": "forge:wires/tin"
+        },
+        "G": {
+            "tag": "forge:wires/gold"
+        },
+        "L": {
+            "item": "minecraft:leather"
+        }
+    },
+    "result": {
+        "item": "fluxmachines:insulated_winding",
+        "count": 2
+    }
+}

@@ -1,1 +1,15 @@
-{"type":"fluxmachines:machine_processing","machine":"wire_mill","ingredients":[{"tag":"forge:ingots/nickel"}],"result":{"item":"fluxmachines:nickel_wire","count":4},"duration":140,"energy":48}
+{
+    "type": "fluxmachines:machine_processing",
+    "machine": "wire_mill",
+    "ingredients": [
+        {
+            "tag": "forge:ingots/nickel"
+        }
+    ],
+    "result": {
+        "item": "fluxmachines:nickel_wire",
+        "count": 4
+    },
+    "duration": 140,
+    "energy": 48
+}

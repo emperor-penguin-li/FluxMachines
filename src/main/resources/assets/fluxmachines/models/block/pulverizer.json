@@ -1,9 +1,9 @@
 {
-  "parent": "minecraft:block/cube_bottom_top",
-  "textures": {
-    "bottom": "fluxmachines:block/pulverizer_bottom",
-    "side": "fluxmachines:block/pulverizer_side",
-    "top": "fluxmachines:block/pulverizer_top",
-    "particle": "fluxmachines:block/pulverizer_side"
-  }
+    "parent": "minecraft:block/cube_bottom_top",
+    "textures": {
+        "bottom": "fluxmachines:block/pulverizer_bottom",
+        "side": "fluxmachines:block/pulverizer_side",
+        "top": "fluxmachines:block/pulverizer_top",
+        "particle": "fluxmachines:block/pulverizer_side"
+    }
 }

@@ -1,1 +1,19 @@
-{"type":"minecraft:crafting_shaped","pattern":["WWW","WRW","WWW"],"key":{"W":{"item":"fluxmachines:insulated_winding"},"R":{"tag":"forge:ingots/redstone_alloy"}},"result":{"item":"fluxmachines:induction_coil"}}
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "WWW",
+        "WRW",
+        "WWW"
+    ],
+    "key": {
+        "W": {
+            "item": "fluxmachines:insulated_winding"
+        },
+        "R": {
+            "tag": "forge:ingots/redstone_alloy"
+        }
+    },
+    "result": {
+        "item": "fluxmachines:induction_coil"
+    }
+}

@@ -1,1 +1,15 @@
-{"replace":false,"values":["#forge:ingots/tin","#forge:ingots/nickel","#forge:ingots/redstone_alloy","#forge:ingots/flux_alloy","#forge:ingots/reinforced_alloy"]}
+{
+    "replace": false,
+    "values": [
+        "#forge:ingots/tin",
+        "#forge:ingots/nickel",
+        "#forge:ingots/redstone_alloy",
+        "#forge:ingots/flux_alloy",
+        "#forge:ingots/reinforced_alloy",
+        "#forge:ingots/titanium",
+        "#forge:ingots/cobalt",
+        "#forge:ingots/tungsten",
+        "#forge:ingots/osmium",
+        "#forge:ingots/iridium"
+    ]
+}

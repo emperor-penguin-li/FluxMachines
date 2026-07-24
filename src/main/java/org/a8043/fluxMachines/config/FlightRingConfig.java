@@ -15,5 +15,6 @@ public final class FlightRingConfig {
     private final ForgeConfigSpec.IntValue fallCost = FluxMachinesConfig.INSTANCE.getFallCost();
     private final ForgeConfigSpec.DoubleValue boostSpeed = FluxMachinesConfig.INSTANCE.getBoostSpeed();
 
-    private FlightRingConfig() {}
+    private FlightRingConfig() {
+    }
 }

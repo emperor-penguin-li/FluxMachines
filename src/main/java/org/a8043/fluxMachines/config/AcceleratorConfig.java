@@ -14,5 +14,6 @@ public final class AcceleratorConfig {
     private final ForgeConfigSpec.IntValue maxConnections = FluxMachinesConfig.INSTANCE.getMaxConnections();
     private final ForgeConfigSpec.IntValue energyCapacity = FluxMachinesConfig.INSTANCE.getEnergyCapacity();
 
-    private AcceleratorConfig() {}
+    private AcceleratorConfig() {
+    }
 }

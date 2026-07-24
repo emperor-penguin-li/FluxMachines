@@ -1,1 +1,3 @@
-{"parent":"fluxmachines:block/nickel_ore"}
+{
+    "parent": "fluxmachines:block/nickel_ore"
+}

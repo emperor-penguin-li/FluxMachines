@@ -1,1 +1,3 @@
-{"parent":"fluxmachines:block/tin_ore"}
+{
+    "parent": "fluxmachines:block/tin_ore"
+}

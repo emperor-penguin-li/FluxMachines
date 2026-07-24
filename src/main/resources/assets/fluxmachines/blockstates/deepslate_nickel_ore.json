@@ -1,1 +1,7 @@
-{"variants":{"":{"model":"fluxmachines:block/deepslate_nickel_ore"}}}
+{
+    "variants": {
+        "": {
+            "model": "fluxmachines:block/deepslate_nickel_ore"
+        }
+    }
+}

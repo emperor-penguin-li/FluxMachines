@@ -1,1 +1,25 @@
-{"type":"minecraft:crafting_shaped","pattern":["NSN","TIT","NSN"],"key":{"N":{"tag":"forge:ingots/nickel"},"S":{"tag":"forge:glass/silica"},"T":{"tag":"forge:ingots/tin"},"I":{"item":"minecraft:iron_block"}},"result":{"item":"fluxmachines:machine_casing"}}
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "NSN",
+        "TIT",
+        "NSN"
+    ],
+    "key": {
+        "N": {
+            "tag": "forge:ingots/nickel"
+        },
+        "S": {
+            "tag": "forge:glass/silica"
+        },
+        "T": {
+            "tag": "forge:ingots/tin"
+        },
+        "I": {
+            "item": "minecraft:iron_block"
+        }
+    },
+    "result": {
+        "item": "fluxmachines:machine_casing"
+    }
+}

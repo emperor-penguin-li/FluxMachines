@@ -1,1 +1,12 @@
-{"replace":false,"values":["#forge:ores/tin","#forge:ores/nickel"]}
+{
+    "replace": false,
+    "values": [
+        "#forge:ores/tin",
+        "#forge:ores/nickel",
+        "#forge:ores/titanium",
+        "#forge:ores/cobalt",
+        "#forge:ores/tungsten",
+        "#forge:ores/osmium",
+        "#forge:ores/iridium"
+    ]
+}

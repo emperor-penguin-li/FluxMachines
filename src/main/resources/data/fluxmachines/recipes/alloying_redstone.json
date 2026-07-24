@@ -1,1 +1,21 @@
-{"type":"fluxmachines:machine_processing","machine":"alloy_furnace","ingredients":[{"tag":"forge:dusts/iron"},{"tag":"forge:dusts/nickel"},{"tag":"forge:dusts/redstone"}],"result":{"item":"fluxmachines:redstone_alloy","count":2},"duration":240,"energy":160}
+{
+    "type": "fluxmachines:machine_processing",
+    "machine": "alloy_furnace",
+    "ingredients": [
+        {
+            "tag": "forge:dusts/iron"
+        },
+        {
+            "tag": "forge:dusts/nickel"
+        },
+        {
+            "tag": "forge:dusts/redstone"
+        }
+    ],
+    "result": {
+        "item": "fluxmachines:redstone_alloy",
+        "count": 2
+    },
+    "duration": 240,
+    "energy": 160
+}

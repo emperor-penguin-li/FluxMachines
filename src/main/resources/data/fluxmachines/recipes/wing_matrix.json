@@ -1,1 +1,28 @@
-{"type":"minecraft:crafting_shaped","pattern":["RLR","MCM","RER"],"key":{"R":{"tag":"forge:ingots/reinforced_alloy"},"L":{"item":"fluxmachines:lift_emitter"},"M":{"item":"minecraft:phantom_membrane"},"C":{"item":"fluxmachines:flight_control_core"},"E":{"item":"minecraft:elytra"}},"result":{"item":"fluxmachines:wing_matrix"}}
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "RLR",
+        "MCM",
+        "RER"
+    ],
+    "key": {
+        "R": {
+            "tag": "forge:ingots/reinforced_alloy"
+        },
+        "L": {
+            "item": "fluxmachines:lift_emitter"
+        },
+        "M": {
+            "item": "minecraft:phantom_membrane"
+        },
+        "C": {
+            "item": "fluxmachines:flight_control_core"
+        },
+        "E": {
+            "item": "minecraft:elytra"
+        }
+    },
+    "result": {
+        "item": "fluxmachines:wing_matrix"
+    }
+}

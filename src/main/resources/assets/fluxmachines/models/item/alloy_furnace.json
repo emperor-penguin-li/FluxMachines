@@ -1,1 +1,3 @@
-{"parent":"fluxmachines:block/alloy_furnace"}
+{
+    "parent": "fluxmachines:block/alloy_furnace"
+}

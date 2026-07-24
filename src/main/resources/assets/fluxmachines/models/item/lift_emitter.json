@@ -1,1 +1,6 @@
-{"parent":"item/generated","textures":{"layer0":"fluxmachines:item/lift_emitter"}}
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "fluxmachines:item/lift_emitter"
+    }
+}

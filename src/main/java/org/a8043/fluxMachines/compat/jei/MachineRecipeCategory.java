@@ -26,12 +26,28 @@ final class MachineRecipeCategory implements IRecipeCategory<MachineRecipe> {
         this.icon = guiHelper.createDrawableItemStack(iconStack);
     }
 
-    @Override public @NotNull RecipeType<MachineRecipe> getRecipeType() { return recipeType; }
-    @Override public @NotNull Component getTitle() { return Component.translatable("jei.fluxmachines.category." + machine.id()); }
-    @Override public @NotNull IDrawable getBackground() { return background; }
-    @Override public @NotNull IDrawable getIcon() { return icon; }
+    @Override
+    public @NotNull RecipeType<MachineRecipe> getRecipeType() {
+        return recipeType;
+    }
 
-    @Override public void setRecipe(@NotNull IRecipeLayoutBuilder builder, @NotNull MachineRecipe recipe, @NotNull IFocusGroup focuses) {
+    @Override
+    public @NotNull Component getTitle() {
+        return Component.translatable("jei.fluxmachines.category." + machine.id());
+    }
+
+    @Override
+    public @NotNull IDrawable getBackground() {
+        return background;
+    }
+
+    @Override
+    public @NotNull IDrawable getIcon() {
+        return icon;
+    }
+
+    @Override
+    public void setRecipe(@NotNull IRecipeLayoutBuilder builder, @NotNull MachineRecipe recipe, @NotNull IFocusGroup focuses) {
         int count = recipe.getIngredients().size();
         int startX = count == 1 ? 24 : 6;
         for (int slot = 0; slot < count; slot++) {

@@ -13,8 +13,14 @@ public class ProcessingMachineScreen extends AbstractContainerScreen<ProcessingM
     private static final ResourceLocation WIRE_MILL_TEXTURE = guiTexture("wire_mill");
     private static final ResourceLocation ALLOY_FURNACE_TEXTURE = guiTexture("alloy_furnace");
 
-    public ProcessingMachineScreen(ProcessingMachineMenu menu, Inventory inventory, Component title) { super(menu, inventory, title); imageWidth = 176; imageHeight = 166; }
-    @Override protected void renderBg(GuiGraphics g, float partialTick, int mouseX, int mouseY) {
+    public ProcessingMachineScreen(ProcessingMachineMenu menu, Inventory inventory, Component title) {
+        super(menu, inventory, title);
+        imageWidth = 176;
+        imageHeight = 166;
+    }
+
+    @Override
+    protected void renderBg(GuiGraphics g, float partialTick, int mouseX, int mouseY) {
         g.blit(getTexture(), leftPos, topPos, 0, 0, imageWidth, imageHeight, imageWidth, imageHeight);
         int height = Math.round(52F * menu.getEnergy() / Math.max(1, menu.getCapacity()));
         g.fill(leftPos + 154, topPos + 76 - height, leftPos + 162, topPos + 76, getAccentColor());
@@ -23,7 +29,9 @@ public class ProcessingMachineScreen extends AbstractContainerScreen<ProcessingM
             g.fill(leftPos + 84, topPos + 39, leftPos + 84 + width, topPos + 47, getAccentColor());
         }
     }
-    @Override protected void renderLabels(GuiGraphics g, int mouseX, int mouseY) {
+
+    @Override
+    protected void renderLabels(GuiGraphics g, int mouseX, int mouseY) {
         g.drawString(font, title, 8, 6, 0x30363A, false);
         g.drawString(font, Component.translatable("gui.fluxmachines.machine_energy", menu.getEnergy(), menu.getCapacity()), 8, 18, 0x4A5054, false);
         g.drawString(font, Component.translatable("gui.fluxmachines.machine_input"), 26, 59, 0x4A5054, false);

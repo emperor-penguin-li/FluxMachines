@@ -1,8 +1,5 @@
 package org.a8043.fluxMachines.client;
 
-import org.a8043.fluxMachines.menu.AcceleratorMenu;
-import org.a8043.fluxMachines.network.NetworkHandler;
-import org.a8043.fluxMachines.network.SetMultiplierPacket;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.EditBox;
@@ -11,6 +8,9 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import org.a8043.fluxMachines.Main;
+import org.a8043.fluxMachines.menu.AcceleratorMenu;
+import org.a8043.fluxMachines.network.NetworkHandler;
+import org.a8043.fluxMachines.network.SetMultiplierPacket;
 
 public class AcceleratorScreen extends AbstractContainerScreen<AcceleratorMenu> {
     private static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "textures/gui/accelerator.png");

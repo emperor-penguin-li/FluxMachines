@@ -1,1 +1,3 @@
-{"parent":"fluxmachines:block/pulverizer"}
+{
+    "parent": "fluxmachines:block/pulverizer"
+}

@@ -1,16 +1,16 @@
 package org.a8043.fluxMachines.menu;
 
 import lombok.Getter;
-import org.a8043.fluxMachines.blockentity.AcceleratorBlockEntity;
-import org.a8043.fluxMachines.registry.ModMenus;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.DataSlot;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import org.a8043.fluxMachines.blockentity.AcceleratorBlockEntity;
+import org.a8043.fluxMachines.registry.ModMenus;
 import org.jetbrains.annotations.NotNull;
 
 @Getter

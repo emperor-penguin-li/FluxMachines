@@ -6,6 +6,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.a8043.fluxMachines.Main;
+import org.a8043.fluxMachines.recipe.AdvancedProcessingRecipe;
 import org.a8043.fluxMachines.recipe.MachineRecipe;
 
 public final class ModRecipes {
@@ -18,8 +19,21 @@ public final class ModRecipes {
         RECIPE_SERIALIZERS.register("machine_processing", MachineRecipe.Serializer::new);
     public static final RegistryObject<RecipeType<MachineRecipe>> MACHINE_TYPE =
         RECIPE_TYPES.register("machine_processing", () -> new RecipeType<>() {
-            @Override public String toString() { return Main.MOD_ID + ":machine_processing"; }
+            @Override
+            public String toString() {
+                return Main.MOD_ID + ":machine_processing";
+            }
+        });
+    public static final RegistryObject<RecipeSerializer<AdvancedProcessingRecipe>> ADVANCED_SERIALIZER =
+        RECIPE_SERIALIZERS.register("advanced_processing", AdvancedProcessingRecipe.Serializer::new);
+    public static final RegistryObject<RecipeType<AdvancedProcessingRecipe>> ADVANCED_TYPE =
+        RECIPE_TYPES.register("advanced_processing", () -> new RecipeType<>() {
+            @Override
+            public String toString() {
+                return Main.MOD_ID + ":advanced_processing";
+            }
         });
 
-    private ModRecipes() {}
+    private ModRecipes() {
+    }
 }

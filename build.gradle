@@ -88,13 +88,13 @@ tasks.register('generateTextures') {
     def scripts = fileTree('./scripts/generate-textures') { include '*.ps1' }
     def textureOutput = new File(generatedMainResourcesDir, "assets/$mod_id/textures")
     inputs.files(scripts)
-    outputs.dir(textureOutput)
+    outputs.dir(generatedMainResourcesDir)
 
     doLast {
         scripts.files.sort().each { script ->
             exec {
                 commandLine 'pwsh', '-NoProfile', '-File', script.absolutePath,
-                    '-OutputRoot', textureOutput.absolutePath
+                        '-OutputRoot', textureOutput.absolutePath
             }
         }
     }

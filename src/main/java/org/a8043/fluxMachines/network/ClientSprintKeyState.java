@@ -17,5 +17,7 @@ public final class ClientSprintKeyState {
             NetworkHandler.CHANNEL.sendToServer(new SprintKeyPacket(minecraft.options.keySprint.isDown()));
         }
     }
-    private ClientSprintKeyState() {}
+
+    private ClientSprintKeyState() {
+    }
 }

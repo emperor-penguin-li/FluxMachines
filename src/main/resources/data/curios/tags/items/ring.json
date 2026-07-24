@@ -1,1 +1,7 @@
-{"replace":false,"values":["fluxmachines:electric_flight_ring"]}
+{
+    "replace": false,
+    "values": [
+        "fluxmachines:electric_flight_ring",
+        "fluxmachines:electric_life_support_ring"
+    ]
+}

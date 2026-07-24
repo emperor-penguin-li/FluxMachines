@@ -1,1 +1,6 @@
-{"parent":"minecraft:block/cube_all","textures":{"all":"fluxmachines:block/deepslate_tin_ore"}}
+{
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+        "all": "fluxmachines:block/deepslate_tin_ore"
+    }
+}

@@ -1,1 +1,15 @@
-{"replace":false,"values":["#forge:dusts/iron","#forge:dusts/copper","#forge:dusts/gold","#forge:dusts/tin","#forge:dusts/nickel"]}
+{
+    "replace": false,
+    "values": [
+        "#forge:dusts/iron",
+        "#forge:dusts/copper",
+        "#forge:dusts/gold",
+        "#forge:dusts/tin",
+        "#forge:dusts/nickel",
+        "#forge:dusts/titanium",
+        "#forge:dusts/cobalt",
+        "#forge:dusts/tungsten",
+        "#forge:dusts/osmium",
+        "#forge:dusts/iridium"
+    ]
+}

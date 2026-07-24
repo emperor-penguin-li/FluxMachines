@@ -9,11 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.Recipe;
-import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraft.world.item.crafting.RecipeType;
-import net.minecraft.world.item.crafting.ShapedRecipe;
+import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import org.a8043.fluxMachines.registry.ModRecipes;
 import org.jetbrains.annotations.NotNull;
@@ -23,8 +19,15 @@ public final class MachineRecipe implements Recipe<SimpleContainer> {
         PULVERIZER("pulverizer"), WIRE_MILL("wire_mill"), ALLOY_FURNACE("alloy_furnace");
 
         private final String id;
-        Machine(String id) { this.id = id; }
-        public String id() { return id; }
+
+        Machine(String id) {
+            this.id = id;
+        }
+
+        public String id() {
+            return id;
+        }
+
         public static Machine fromId(String id) {
             for (Machine machine : values()) if (machine.id.equals(id)) return machine;
             throw new IllegalArgumentException("Unknown processing machine: " + id);
@@ -48,7 +51,8 @@ public final class MachineRecipe implements Recipe<SimpleContainer> {
         this.energyPerTick = energyPerTick;
     }
 
-    @Override public boolean matches(@NotNull SimpleContainer container, @NotNull Level level) {
+    @Override
+    public boolean matches(@NotNull SimpleContainer container, @NotNull Level level) {
         for (int slot = 0; slot < ingredients.size(); slot++) {
             if (!ingredients.get(slot).test(container.getItem(slot))) return false;
         }
@@ -57,35 +61,82 @@ public final class MachineRecipe implements Recipe<SimpleContainer> {
         }
         return true;
     }
-    @Override public @NotNull ItemStack assemble(@NotNull SimpleContainer container, @NotNull RegistryAccess access) { return result.copy(); }
-    @Override public boolean canCraftInDimensions(int width, int height) { return true; }
-    @Override public @NotNull ItemStack getResultItem(@NotNull RegistryAccess access) { return result.copy(); }
-    @Override public @NotNull ResourceLocation getId() { return id; }
-    @Override public @NotNull RecipeSerializer<?> getSerializer() { return ModRecipes.MACHINE_SERIALIZER.get(); }
-    @Override public @NotNull RecipeType<?> getType() { return ModRecipes.MACHINE_TYPE.get(); }
-    @Override public @NotNull NonNullList<Ingredient> getIngredients() { return ingredients; }
-    @Override public boolean isSpecial() { return true; }
 
-    public Machine machine() { return machine; }
-    public ItemStack result() { return result.copy(); }
-    public int duration() { return duration; }
-    public int energyPerTick() { return energyPerTick; }
+    @Override
+    public @NotNull ItemStack assemble(@NotNull SimpleContainer container, @NotNull RegistryAccess access) {
+        return result.copy();
+    }
+
+    @Override
+    public boolean canCraftInDimensions(int width, int height) {
+        return true;
+    }
+
+    @Override
+    public @NotNull ItemStack getResultItem(@NotNull RegistryAccess access) {
+        return result.copy();
+    }
+
+    @Override
+    public @NotNull ResourceLocation getId() {
+        return id;
+    }
+
+    @Override
+    public @NotNull RecipeSerializer<?> getSerializer() {
+        return ModRecipes.MACHINE_SERIALIZER.get();
+    }
+
+    @Override
+    public @NotNull RecipeType<?> getType() {
+        return ModRecipes.MACHINE_TYPE.get();
+    }
+
+    @Override
+    public @NotNull NonNullList<Ingredient> getIngredients() {
+        return ingredients;
+    }
+
+    @Override
+    public boolean isSpecial() {
+        return true;
+    }
+
+    public Machine machine() {
+        return machine;
+    }
+
+    public ItemStack result() {
+        return result.copy();
+    }
+
+    public int duration() {
+        return duration;
+    }
+
+    public int energyPerTick() {
+        return energyPerTick;
+    }
 
     public static final class Serializer implements RecipeSerializer<MachineRecipe> {
-        @Override public @NotNull MachineRecipe fromJson(@NotNull ResourceLocation id, @NotNull JsonObject json) {
+        @Override
+        public @NotNull MachineRecipe fromJson(@NotNull ResourceLocation id, @NotNull JsonObject json) {
             Machine machine = Machine.fromId(GsonHelper.getAsString(json, "machine"));
             JsonArray inputArray = GsonHelper.getAsJsonArray(json, "ingredients");
-            if (inputArray.isEmpty() || inputArray.size() > 3) throw new IllegalArgumentException("Machine recipes require 1-3 ingredients");
+            if (inputArray.isEmpty() || inputArray.size() > 3)
+                throw new IllegalArgumentException("Machine recipes require 1-3 ingredients");
             NonNullList<Ingredient> ingredients = NonNullList.create();
             inputArray.forEach(element -> ingredients.add(Ingredient.fromJson(element)));
             ItemStack result = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "result"));
             int duration = GsonHelper.getAsInt(json, "duration", 200);
             int energyPerTick = GsonHelper.getAsInt(json, "energy", 40);
-            if (duration <= 0 || energyPerTick <= 0) throw new IllegalArgumentException("Machine recipe duration and energy must be positive");
+            if (duration <= 0 || energyPerTick <= 0)
+                throw new IllegalArgumentException("Machine recipe duration and energy must be positive");
             return new MachineRecipe(id, machine, ingredients, result, duration, energyPerTick);
         }
 
-        @Override public MachineRecipe fromNetwork(@NotNull ResourceLocation id, @NotNull FriendlyByteBuf buffer) {
+        @Override
+        public MachineRecipe fromNetwork(@NotNull ResourceLocation id, @NotNull FriendlyByteBuf buffer) {
             Machine machine = buffer.readEnum(Machine.class);
             int size = buffer.readVarInt();
             NonNullList<Ingredient> ingredients = NonNullList.withSize(size, Ingredient.EMPTY);
@@ -93,7 +144,8 @@ public final class MachineRecipe implements Recipe<SimpleContainer> {
             return new MachineRecipe(id, machine, ingredients, buffer.readItem(), buffer.readVarInt(), buffer.readVarInt());
         }
 
-        @Override public void toNetwork(@NotNull FriendlyByteBuf buffer, @NotNull MachineRecipe recipe) {
+        @Override
+        public void toNetwork(@NotNull FriendlyByteBuf buffer, @NotNull MachineRecipe recipe) {
             buffer.writeEnum(recipe.machine);
             buffer.writeVarInt(recipe.ingredients.size());
             recipe.ingredients.forEach(ingredient -> ingredient.toNetwork(buffer));

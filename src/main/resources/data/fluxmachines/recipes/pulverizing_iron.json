@@ -1,1 +1,14 @@
-{"type":"fluxmachines:machine_processing","machine":"pulverizer","ingredients":[{"tag":"forge:ingots/iron"}],"result":{"item":"fluxmachines:iron_dust"},"duration":200,"energy":40}
+{
+    "type": "fluxmachines:machine_processing",
+    "machine": "pulverizer",
+    "ingredients": [
+        {
+            "tag": "forge:ingots/iron"
+        }
+    ],
+    "result": {
+        "item": "fluxmachines:iron_dust"
+    },
+    "duration": 200,
+    "energy": 40
+}

@@ -1,22 +1,23 @@
-package org.a8043.fluxMachines;
+package org.a8043.fluxMachines.events;
 
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingFallEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import top.theillusivec4.curios.api.CuriosApi;
-import top.theillusivec4.curios.api.SlotResult;
+import org.a8043.fluxMachines.Main;
 import org.a8043.fluxMachines.config.FlightRingConfig;
 import org.a8043.fluxMachines.item.ElectricFlightRingItem;
 import org.a8043.fluxMachines.registry.ModItems;
+import top.theillusivec4.curios.api.CuriosApi;
+import top.theillusivec4.curios.api.SlotResult;
 
 import java.util.Optional;
 
@@ -27,7 +28,8 @@ public final class FlightRingEvents {
 
     @SubscribeEvent
     public static void playerTick(TickEvent.PlayerTickEvent event) {
-        if (event.phase != TickEvent.Phase.END || event.player.level().isClientSide || !(event.player instanceof ServerPlayer player)) return;
+        if (event.phase != TickEvent.Phase.END || event.player.level().isClientSide || !(event.player instanceof ServerPlayer player))
+            return;
         if (player.isCreative() || player.isSpectator()) return;
         Optional<SlotResult> found = CuriosApi.getCuriosInventory(player).resolve().flatMap(h -> h.findFirstCurio(ModItems.ELECTRIC_FLIGHT_RING.get()));
         if (found.isEmpty()) {
@@ -44,8 +46,8 @@ public final class FlightRingEvents {
         grant(player);
         int boostCost = FlightRingConfig.INSTANCE.getBoostCost().get();
         boolean boosted = player.getAbilities().flying
-                && player.getPersistentData().getBoolean(SPRINT_KEY_TAG)
-                && ElectricFlightRingItem.getEnergy(ring) >= normal + boostCost;
+                          && player.getPersistentData().getBoolean(SPRINT_KEY_TAG)
+                          && ElectricFlightRingItem.getEnergy(ring) >= normal + boostCost;
         if (player.getAbilities().flying) {
             ElectricFlightRingItem.consume(ring, normal + (boosted ? boostCost : 0));
             if (boosted) applyBoost(player);
@@ -55,7 +57,8 @@ public final class FlightRingEvents {
 
     @SubscribeEvent
     public static void fall(LivingFallEvent event) {
-        if (!(event.getEntity() instanceof ServerPlayer player) || event.getEntity().level().isClientSide || event.getDistance() <= 0) return;
+        if (!(event.getEntity() instanceof ServerPlayer player) || event.getEntity().level().isClientSide || event.getDistance() <= 0)
+            return;
         Optional<SlotResult> found = CuriosApi.getCuriosInventory(player).resolve().flatMap(h -> h.findFirstCurio(ModItems.ELECTRIC_FLIGHT_RING.get()));
         if (found.isEmpty()) return;
         ItemStack ring = found.get().stack();
@@ -82,8 +85,10 @@ public final class FlightRingEvents {
         player.onUpdateAbilities();
     }
 
-    /** Applies the acceleration used by the original ring instead of changing
-     * the player's creative flying-speed attribute. */
+    /**
+     * Applies the acceleration used by the original ring instead of changing
+     * the player's creative flying-speed attribute.
+     */
     private static void applyBoost(ServerPlayer player) {
         Vec3 look = player.getLookAngle();
         Vec3 motion = player.getDeltaMovement();
@@ -100,14 +105,15 @@ public final class FlightRingEvents {
             float yawRad = particleYaw * ((float) Math.PI / 180F);
             float pitchRad = particlePitch * ((float) Math.PI / 180F);
             Vec3 direction = new Vec3(
-                    -Mth.sin(yawRad) * Mth.cos(pitchRad),
-                    -Mth.sin(pitchRad),
-                    Mth.cos(yawRad) * Mth.cos(pitchRad));
+                -Mth.sin(yawRad) * Mth.cos(pitchRad),
+                -Mth.sin(pitchRad),
+                Mth.cos(yawRad) * Mth.cos(pitchRad));
             level.sendParticles(ParticleTypes.FIREWORK,
-                    player.getX(), player.getY() + player.getEyeHeight() - 0.2D, player.getZ(),
-                    1, direction.x, direction.y, direction.z, 0.0D);
+                player.getX(), player.getY() + player.getEyeHeight() - 0.2D, player.getZ(),
+                1, direction.x, direction.y, direction.z, 0.0D);
         }
     }
 
-    private FlightRingEvents() {}
+    private FlightRingEvents() {
+    }
 }

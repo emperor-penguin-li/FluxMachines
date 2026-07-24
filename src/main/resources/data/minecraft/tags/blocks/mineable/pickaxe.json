@@ -8,6 +8,18 @@
         "fluxmachines:mob_suppressor",
         "fluxmachines:suppressor_casing",
         "fluxmachines:suppressor_coil",
-        "fluxmachines:suppressor_emitter"
+        "fluxmachines:suppressor_emitter",
+        "fluxmachines:resonant_crusher",
+        "fluxmachines:leaching_reactor",
+        "fluxmachines:electrolytic_purifier",
+        "fluxmachines:plasma_furnace",
+        "fluxmachines:quantum_assembler",
+        "fluxmachines:titanium_ore",
+        "fluxmachines:deepslate_titanium_ore",
+        "fluxmachines:cobalt_ore",
+        "fluxmachines:deepslate_cobalt_ore",
+        "fluxmachines:tungsten_ore",
+        "fluxmachines:osmium_ore",
+        "fluxmachines:iridium_ore"
     ]
 }

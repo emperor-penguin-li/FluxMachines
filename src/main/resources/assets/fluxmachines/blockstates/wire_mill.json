@@ -1,1 +1,7 @@
-{"variants":{"":{"model":"fluxmachines:block/wire_mill"}}}
+{
+    "variants": {
+        "": {
+            "model": "fluxmachines:block/wire_mill"
+        }
+    }
+}

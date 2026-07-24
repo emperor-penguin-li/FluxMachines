@@ -1,1 +1,28 @@
-{"type":"minecraft:crafting_shaped","pattern":["NBN","RMR","TBT"],"key":{"N":{"tag":"forge:ingots/nickel"},"B":{"item":"minecraft:blast_furnace"},"R":{"item":"minecraft:redstone_block"},"M":{"item":"fluxmachines:machine_casing"},"T":{"tag":"forge:ingots/tin"}},"result":{"item":"fluxmachines:alloy_furnace"}}
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "NBN",
+        "RMR",
+        "TBT"
+    ],
+    "key": {
+        "N": {
+            "tag": "forge:ingots/nickel"
+        },
+        "B": {
+            "item": "minecraft:blast_furnace"
+        },
+        "R": {
+            "item": "minecraft:redstone_block"
+        },
+        "M": {
+            "item": "fluxmachines:machine_casing"
+        },
+        "T": {
+            "tag": "forge:ingots/tin"
+        }
+    },
+    "result": {
+        "item": "fluxmachines:alloy_furnace"
+    }
+}

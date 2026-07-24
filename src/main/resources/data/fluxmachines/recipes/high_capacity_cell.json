@@ -1,1 +1,28 @@
-{"type":"minecraft:crafting_shaped","pattern":["LEL","INI","LDL"],"key":{"L":{"item":"fluxmachines:energy_lattice"},"E":{"item":"minecraft:echo_shard"},"I":{"item":"fluxmachines:induction_coil"},"N":{"item":"minecraft:netherite_ingot"},"D":{"item":"minecraft:diamond_block"}},"result":{"item":"fluxmachines:high_capacity_cell"}}
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "LEL",
+        "INI",
+        "LDL"
+    ],
+    "key": {
+        "L": {
+            "item": "fluxmachines:energy_lattice"
+        },
+        "E": {
+            "item": "minecraft:echo_shard"
+        },
+        "I": {
+            "item": "fluxmachines:induction_coil"
+        },
+        "N": {
+            "item": "minecraft:netherite_ingot"
+        },
+        "D": {
+            "item": "minecraft:diamond_block"
+        }
+    },
+    "result": {
+        "item": "fluxmachines:high_capacity_cell"
+    }
+}

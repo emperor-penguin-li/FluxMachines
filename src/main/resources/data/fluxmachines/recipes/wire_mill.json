@@ -1,1 +1,31 @@
-{"type":"minecraft:crafting_shaped","pattern":["TCT","PMP","NGN"],"key":{"T":{"tag":"forge:ingots/tin"},"C":{"item":"minecraft:copper_block"},"P":{"item":"minecraft:piston"},"M":{"item":"fluxmachines:machine_casing"},"N":{"tag":"forge:ingots/nickel"},"G":{"item":"minecraft:gold_block"}},"result":{"item":"fluxmachines:wire_mill"}}
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "TCT",
+        "PMP",
+        "NGN"
+    ],
+    "key": {
+        "T": {
+            "tag": "forge:ingots/tin"
+        },
+        "C": {
+            "item": "minecraft:copper_block"
+        },
+        "P": {
+            "item": "minecraft:piston"
+        },
+        "M": {
+            "item": "fluxmachines:machine_casing"
+        },
+        "N": {
+            "tag": "forge:ingots/nickel"
+        },
+        "G": {
+            "item": "minecraft:gold_block"
+        }
+    },
+    "result": {
+        "item": "fluxmachines:wire_mill"
+    }
+}

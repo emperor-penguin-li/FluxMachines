@@ -1,7 +1,5 @@
 package org.a8043.fluxMachines.block;
 
-import org.a8043.fluxMachines.blockentity.AcceleratorBlockEntity;
-import org.a8043.fluxMachines.registry.ModBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -16,6 +14,8 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.network.NetworkHooks;
+import org.a8043.fluxMachines.blockentity.AcceleratorBlockEntity;
+import org.a8043.fluxMachines.registry.ModBlockEntities;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

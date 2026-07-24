@@ -1,1 +1,7 @@
-{"replace":false,"values":["fluxmachines:tin_ore","fluxmachines:deepslate_tin_ore"]}
+{
+    "replace": false,
+    "values": [
+        "fluxmachines:tin_ore",
+        "fluxmachines:deepslate_tin_ore"
+    ]
+}

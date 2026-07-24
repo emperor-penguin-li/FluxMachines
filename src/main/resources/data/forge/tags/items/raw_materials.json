@@ -1,1 +1,12 @@
-{"replace":false,"values":["#forge:raw_materials/tin","#forge:raw_materials/nickel"]}
+{
+    "replace": false,
+    "values": [
+        "#forge:raw_materials/tin",
+        "#forge:raw_materials/nickel",
+        "#forge:raw_materials/titanium",
+        "#forge:raw_materials/cobalt",
+        "#forge:raw_materials/tungsten",
+        "#forge:raw_materials/osmium",
+        "#forge:raw_materials/iridium"
+    ]
+}

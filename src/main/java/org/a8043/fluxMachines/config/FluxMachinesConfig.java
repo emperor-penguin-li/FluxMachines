@@ -4,7 +4,9 @@ import lombok.Getter;
 import lombok.Setter;
 import net.minecraftforge.common.ForgeConfigSpec;
 
-/** Shared configuration specification for all FluxMachines settings. */
+/**
+ * Shared configuration specification for all FluxMachines settings.
+ */
 @Getter
 @Setter
 public final class FluxMachinesConfig {
@@ -23,6 +25,11 @@ public final class FluxMachinesConfig {
     private ForgeConfigSpec.IntValue fallCost;
     private ForgeConfigSpec.DoubleValue boostSpeed;
 
+    private ForgeConfigSpec.IntValue lifeSupportCapacity;
+    private ForgeConfigSpec.IntValue firstAidCost;
+    private ForgeConfigSpec.IntValue nutritionCost;
+    private ForgeConfigSpec.IntValue forceFieldCost;
+
     private ForgeConfigSpec.IntValue mobSuppressorRange;
     private ForgeConfigSpec.IntValue mobSuppressorEnergyPerTick;
 
@@ -38,6 +45,13 @@ public final class FluxMachinesConfig {
             .defineInRange("maxConnections", 10, 1, 1024);
         energyCapacity = builder.comment("Internal FE buffer capacity.")
             .defineInRange("energyCapacity", 1_000_000, 1, Integer.MAX_VALUE);
+        builder.pop();
+
+        builder.push("electricLifeSupportRing");
+        lifeSupportCapacity = builder.defineInRange("capacity", 100_000_000, 1, Integer.MAX_VALUE);
+        firstAidCost = builder.defineInRange("firstAidCost", 8192, 0, Integer.MAX_VALUE);
+        nutritionCost = builder.defineInRange("nutritionCost", 8192, 0, Integer.MAX_VALUE);
+        forceFieldCost = builder.defineInRange("forceFieldCost", 8192, 0, Integer.MAX_VALUE);
         builder.pop();
 
         builder.push("electricFlightRing");

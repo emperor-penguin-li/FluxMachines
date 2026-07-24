@@ -1,1 +1,19 @@
-{"type":"minecraft:crafting_shaped","pattern":[" B ","BNB"," B "],"key":{"B":{"item":"fluxmachines:conductive_band"},"N":{"item":"minecraft:netherite_ingot"}},"result":{"item":"fluxmachines:ring_frame"}}
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " B ",
+        "BNB",
+        " B "
+    ],
+    "key": {
+        "B": {
+            "item": "fluxmachines:conductive_band"
+        },
+        "N": {
+            "item": "minecraft:netherite_ingot"
+        }
+    },
+    "result": {
+        "item": "fluxmachines:ring_frame"
+    }
+}

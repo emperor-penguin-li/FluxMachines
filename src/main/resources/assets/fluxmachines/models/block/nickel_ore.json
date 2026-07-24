@@ -1,1 +1,6 @@
-{"parent":"minecraft:block/cube_all","textures":{"all":"fluxmachines:block/nickel_ore"}}
+{
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+        "all": "fluxmachines:block/nickel_ore"
+    }
+}

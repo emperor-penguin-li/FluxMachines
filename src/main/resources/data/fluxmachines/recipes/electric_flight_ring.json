@@ -1,1 +1,28 @@
-{"type":"minecraft:crafting_shaped","pattern":["ICI","FWF"," R "],"key":{"I":{"item":"fluxmachines:induction_coil"},"C":{"item":"fluxmachines:high_capacity_cell"},"F":{"item":"fluxmachines:flight_control_core"},"W":{"item":"fluxmachines:wing_matrix"},"R":{"item":"fluxmachines:ring_frame"}},"result":{"item":"fluxmachines:electric_flight_ring"}}
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "ICI",
+        "FWF",
+        " R "
+    ],
+    "key": {
+        "I": {
+            "item": "fluxmachines:induction_coil"
+        },
+        "C": {
+            "item": "fluxmachines:high_capacity_cell"
+        },
+        "F": {
+            "item": "fluxmachines:flight_control_core"
+        },
+        "W": {
+            "item": "fluxmachines:wing_matrix"
+        },
+        "R": {
+            "item": "fluxmachines:ring_frame"
+        }
+    },
+    "result": {
+        "item": "fluxmachines:electric_flight_ring"
+    }
+}

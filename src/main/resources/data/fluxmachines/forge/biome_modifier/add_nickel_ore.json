@@ -1,1 +1,8 @@
-{"type":"forge:add_features","biomes":"#minecraft:is_overworld","features":["fluxmachines:ore_nickel"],"step":"underground_ores"}
+{
+    "type": "forge:add_features",
+    "biomes": "#minecraft:is_overworld",
+    "features": [
+        "fluxmachines:ore_nickel"
+    ],
+    "step": "underground_ores"
+}

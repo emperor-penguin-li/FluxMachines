@@ -1,1 +1,7 @@
-{"variants":{"":{"model":"fluxmachines:block/tin_ore"}}}
+{
+    "variants": {
+        "": {
+            "model": "fluxmachines:block/tin_ore"
+        }
+    }
+}

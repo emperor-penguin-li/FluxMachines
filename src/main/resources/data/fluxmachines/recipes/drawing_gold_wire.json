@@ -1,1 +1,15 @@
-{"type":"fluxmachines:machine_processing","machine":"wire_mill","ingredients":[{"tag":"forge:ingots/gold"}],"result":{"item":"fluxmachines:gold_wire","count":4},"duration":100,"energy":32}
+{
+    "type": "fluxmachines:machine_processing",
+    "machine": "wire_mill",
+    "ingredients": [
+        {
+            "tag": "forge:ingots/gold"
+        }
+    ],
+    "result": {
+        "item": "fluxmachines:gold_wire",
+        "count": 4
+    },
+    "duration": 100,
+    "energy": 32
+}

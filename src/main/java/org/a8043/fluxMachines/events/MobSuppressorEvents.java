@@ -1,4 +1,4 @@
-package org.a8043.fluxMachines;
+package org.a8043.fluxMachines.events;
 
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.MobCategory;
@@ -7,6 +7,7 @@ import net.minecraftforge.event.entity.living.MobSpawnEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import org.a8043.fluxMachines.Main;
 import org.a8043.fluxMachines.blockentity.MobSuppressorBlockEntity;
 
 import java.util.Collections;

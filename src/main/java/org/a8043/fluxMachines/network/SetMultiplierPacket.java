@@ -1,11 +1,11 @@
 package org.a8043.fluxMachines.network;
 
-import org.a8043.fluxMachines.blockentity.AcceleratorBlockEntity;
-import org.a8043.fluxMachines.menu.AcceleratorMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.network.NetworkEvent;
+import org.a8043.fluxMachines.blockentity.AcceleratorBlockEntity;
+import org.a8043.fluxMachines.menu.AcceleratorMenu;
 
 import java.util.function.Supplier;
 
