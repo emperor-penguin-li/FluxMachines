@@ -88,7 +88,14 @@ tasks.register('generateTextures') {
     def scripts = fileTree('./scripts/generate-textures') { include '*.ps1' }
     def textureOutput = new File(generatedMainResourcesDir, "assets/$mod_id/textures")
     inputs.files(scripts)
-    outputs.dir(generatedMainResourcesDir)
+    outputs.dir(textureOutput)
+
+    doFirst {
+        if (textureOutput.exists()) {
+            textureOutput.deleteDir()
+        }
+        textureOutput.mkdirs()
+    }
 
     doLast {
         scripts.files.sort().each { script ->

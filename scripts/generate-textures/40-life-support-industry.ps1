@@ -256,25 +256,17 @@ $elements += New-MachineModelElement @(12, 15, 12) @(14, 20, 14) "top"
 
 $model = @{
 textures = @{
-bottom = "fluxmachines:block/${Name
-}_bottom"; top = "fluxmachines:block/${Name
-}_top"; front = "fluxmachines:block/${Name
-}_front"; back = "fluxmachines:block/${Name
-}_side"; side = "fluxmachines:block/${Name
-}_side"
+bottom = "fluxmachines:block/${Name}_bottom"; top = "fluxmachines:block/${Name}_top"; front = "fluxmachines:block/${Name}_front"; back = "fluxmachines:block/${Name}_side"; side = "fluxmachines:block/${Name}_side"
 }; elements = $elements }
 Write-Json (Join-Path $assetRoot "models/block/$Name.json") $model
 }
 
 foreach ($name in $machines.Keys)
 {
-Save-Texture (New-MachineSurface $name "front") (Join-Path $blockDir "${name
-}_front.png")
+Save-Texture (New-MachineSurface $name "front") (Join-Path $blockDir "${name}_front.png")
 Save-Texture (New-MachineSurface $name "side") (Join-Path $blockDir "${name}_side.png")
-Save-Texture (New-MachineSurface $name "top") (Join-Path $blockDir "${name
-}_top.png")
-Save-Texture (New-MachineSurface $name "bottom") (Join-Path $blockDir "${name
-}_bottom.png")
+Save-Texture (New-MachineSurface $name "top") (Join-Path $blockDir "${name}_top.png")
+Save-Texture (New-MachineSurface $name "bottom") (Join-Path $blockDir "${name}_bottom.png")
 }
 
 $gui = New-Bitmap 176 186 $color.GuiBack
@@ -306,9 +298,7 @@ Save-Texture $gui (Join-Path $guiDir "advanced_machine.png")
 $simpleItems = @()
 foreach ($metal in $metalColors.Keys)
 {
-$simpleItems += "raw_$metal", "crushed_$metal", "purified_${metal
-}_dust", "${metal
-}_ingot"
+$simpleItems += "raw_$metal", "crushed_$metal", "purified_${metal}_dust", "${metal}_ingot"
 }
 $simpleItems += $components.Keys
 foreach ($name in $simpleItems)
@@ -354,8 +344,7 @@ model = "forge:fluid"
 }
 }
 }
-Write-Json (Join-Path $assetRoot "models/item/${fluidName
-}_bucket.json") @{
+Write-Json (Join-Path $assetRoot "models/item/${fluidName}_bucket.json") @{
 parent = "forge:item/bucket"; fluid = "fluxmachines:$fluidName"
 }
 }
@@ -418,14 +407,11 @@ foreach ($metal in $metalColors.Keys)
 {
 $oreNames = if ($metal -eq "titanium" -or $metal -eq "cobalt")
 {
-@("fluxmachines:${metal
-}_ore", "fluxmachines:deepslate_${metal
-}_ore")
+@("fluxmachines:${metal}_ore", "fluxmachines:deepslate_${metal}_ore")
 }
 else
 {
-@("fluxmachines:${metal
-}_ore")
+@("fluxmachines:${metal}_ore")
 }
 Write-Json (Join-Path $dataRoot "forge/tags/blocks/ores/$metal.json") @{
 replace = $false; values = $oreNames
@@ -437,12 +423,10 @@ Write-Json (Join-Path $dataRoot "forge/tags/items/raw_materials/$metal.json") @{
 replace = $false; values = @("fluxmachines:raw_$metal")
 }
 Write-Json (Join-Path $dataRoot "forge/tags/items/dusts/$metal.json") @{
-replace = $false; values = @("fluxmachines:purified_${metal
-}_dust")
+replace = $false; values = @("fluxmachines:purified_${metal}_dust")
 }
 Write-Json (Join-Path $dataRoot "forge/tags/items/ingots/$metal.json") @{
-replace = $false; values = @("fluxmachines:${metal
-}_ingot")
+replace = $false; values = @("fluxmachines:${metal}_ingot")
 }
 }
 
@@ -479,8 +463,7 @@ type = "minecraft:biome"
 Write-Json (Join-Path $dataRoot "fluxmachines/worldgen/placed_feature/ore_$Name.json") @{
 feature = "fluxmachines:ore_$Name"; placement = $placement
 }
-Write-Json (Join-Path $dataRoot "fluxmachines/forge/biome_modifier/add_${Name
-}_ore.json") @{
+Write-Json (Join-Path $dataRoot "fluxmachines/forge/biome_modifier/add_${Name}_ore.json") @{
 type = "forge:add_features"; biomes = $Biomes; features = @("fluxmachines:ore_$Name"); step = "underground_ores"
 }
 }
@@ -575,14 +558,9 @@ Write-Json (Join-Path $dataRoot "fluxmachines/recipes/$Name.json") $recipe
 foreach ($metal in $metalColors.Keys)
 {
 Write-Advanced "resonant_crushing_$metal" "resonant_crusher" @((Item-In "fluxmachines:raw_$metal")) @() @((Item-Out "fluxmachines:crushed_$metal" 2)) @() 400 2048
-Write-Advanced "leaching_$metal" "leaching_reactor" @((Item-In "fluxmachines:crushed_$metal" 8)) @((Fluid-In "fluxmachines:industrial_acid" 1000)) @() @((Fluid-In "fluxmachines:${metal
-}_slurry" 1000), (Fluid-In "fluxmachines:spent_acid" 250)) 1200 8192
-Write-Advanced "purifying_$metal" "electrolytic_purifier" @((Item-In "minecraft:redstone" 4)) @((Fluid-In "fluxmachines:${metal
-}_slurry" 1000)) @((Item-Out "fluxmachines:purified_${metal
-}_dust" 6)) @((Fluid-In "fluxmachines:spent_acid" 500)) 1600 16384
-Write-Advanced "plasma_sintering_$metal" "plasma_furnace" @((Item-In "fluxmachines:purified_${metal
-}_dust" 4)) @((Fluid-In "fluxmachines:cryogenic_coolant" 250)) @((Item-Out "fluxmachines:${metal
-}_ingot")) @() 2000 65536
+Write-Advanced "leaching_$metal" "leaching_reactor" @((Item-In "fluxmachines:crushed_$metal" 8)) @((Fluid-In "fluxmachines:industrial_acid" 1000)) @() @((Fluid-In "fluxmachines:${metal}_slurry" 1000), (Fluid-In "fluxmachines:spent_acid" 250)) 1200 8192
+Write-Advanced "purifying_$metal" "electrolytic_purifier" @((Item-In "minecraft:redstone" 4)) @((Fluid-In "fluxmachines:${metal}_slurry" 1000)) @((Item-Out "fluxmachines:purified_${metal}_dust" 6)) @((Fluid-In "fluxmachines:spent_acid" 500)) 1600 16384
+Write-Advanced "plasma_sintering_$metal" "plasma_furnace" @((Item-In "fluxmachines:purified_${metal}_dust" 4)) @((Fluid-In "fluxmachines:cryogenic_coolant" 250)) @((Item-Out "fluxmachines:${metal}_ingot")) @() 2000 65536
 }
 
 Write-Advanced "resonant_crushing_sulfur" "resonant_crusher" @((Item-In "minecraft:blaze_powder")) @() @((Item-Out "fluxmachines:sulfur_dust" 2)) @() 300 2048
@@ -715,13 +693,10 @@ item = "fluxmachines:accelerator"
 
 foreach ($metal in @("titanium", "cobalt"))
 {
-Write-Json (Join-Path $dataRoot "fluxmachines/recipes/${metal
-}_ingot_from_blasting.json") @{
+Write-Json (Join-Path $dataRoot "fluxmachines/recipes/${metal}_ingot_from_blasting.json") @{
 type = "minecraft:blasting"; category = "misc"; cookingtime = 400; experience = 3.0; ingredient = @{
-item = "fluxmachines:purified_${metal
-}_dust"
-}; result = "fluxmachines:${metal
-}_ingot" }
+item = "fluxmachines:purified_${metal}_dust"
+}; result = "fluxmachines:${metal}_ingot" }
 }
 
 Write-Host "Generated life-support industry resources in $resourceRoot"
