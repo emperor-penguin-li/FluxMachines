@@ -12,19 +12,15 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      # 1. 检出代码
       - name: Checkout repository
         uses: actions/checkout@v4
       
-      # 2. 【关键步骤】安装libgdiplus解决纹理生成问题
-      - name: Install libgdiplus for texture generation
+      # 【关键】安装 libgdiplus 解决纹理生成问题
+      - name: Install libgdiplus
         run: |
           sudo apt-get update
           sudo apt-get install -y libgdiplus
-          # 创建符号链接让PowerShell能找到GDI+库
-          sudo ln -s /usr/lib/libgdiplus.so /usr/lib/gdiplus.dll
       
-      # 3. 设置JDK 17
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
@@ -32,18 +28,14 @@ jobs:
           distribution: 'temurin'
           cache: gradle
       
-      # 4. 给gradlew添加执行权限
       - name: Make gradlew executable
         run: chmod +x gradlew
       
-      # 5. 构建模组（使用bash shell）
       - name: Build with Gradle
         run: ./gradlew build --stacktrace
       
-      # 6. 上传JAR文件
       - name: Upload Mod JAR
         uses: actions/upload-artifact@v4
         with:
           name: FluxMachines-Mod
           path: build/libs/*.jar
-          if-no-files-found: error
